@@ -16,6 +16,7 @@
 
   example-package = pkgs.callPackage ./pkgs/example-package { };
   fzfmenu = pkgs.callPackage ./pkgs/fzfmenu { };
+  moegi-nvim = pkgs.callPackage ./pkgs/moegi-nvim { };
   # some-qt5-package = pkgs.libsForQt5.callPackage ./pkgs/some-qt5-package { };
   # ...
 }
