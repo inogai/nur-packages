@@ -6,7 +6,9 @@
 # commands such as:
 #     nix-build -A mypackage
 
-{ pkgs ? import <nixpkgs> { } }:
+{
+  pkgs ? import <nixpkgs> { },
+}:
 
 {
   # The `lib`, `modules`, and `overlays` names are special
@@ -17,6 +19,7 @@
   example-package = pkgs.callPackage ./pkgs/example-package { };
   fzfmenu = pkgs.callPackage ./pkgs/fzfmenu { };
   moegi-nvim = pkgs.callPackage ./pkgs/moegi-nvim { };
+  winterm-rs = pkgs.callPackage ./pkgs/winterm-rs { };
   # some-qt5-package = pkgs.libsForQt5.callPackage ./pkgs/some-qt5-package { };
   # ...
 }
