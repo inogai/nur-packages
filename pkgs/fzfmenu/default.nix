@@ -18,5 +18,6 @@ rustPlatform.buildRustPackage rec {
     homepage = "https://github.com/inogai/fzfmenu";
     license = lib.licenses.gpl3;
     maintainers = [ ];
+    broken = true;
   };
 }
