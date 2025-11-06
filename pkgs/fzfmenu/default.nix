@@ -1,23 +1,27 @@
-{ lib, rustPlatform, pkgs  }:
+{ lib, pkgs, fetchFromGitHub }:
 
-rustPlatform.buildRustPackage rec {
-  pname = "fzfmenu";
-  version = "0.2.2-git.5b74b33";
-
-  src = pkgs.fetchFromGitHub {
+let
+  version = "0.2.2-1";
+  src = fetchFromGitHub {
     owner = "inogai";
     repo = "fzfmenu";
-    rev = "5b74b336dad9978c9e3dda6247675af78620bb49";
-    hash = "sha256-BiqBA6NTbqAqoVIu2MysQyJAmv9b5LNcafSxd0ahEjs=";
+    rev = "f941a1ae855f5400364ae5c384bb558f9482ed6a";
+    hash = "sha256-EjPnv9i1phAK5ENslpSrRXcRs9W9uNfieoi/4nbCod0=";
   };
 
-  cargoHash = "sha256-e/AY0aeWtjc9g8TfRcEQjvNWxmfRiPHtAi7Gqo8rEdk=";
-
-  meta = {
-    description = "An application launcher based on fzf";
-    homepage = "https://github.com/inogai/fzfmenu";
-    license = lib.licenses.gpl3;
-    maintainers = [ ];
-    broken = true;
+  cargoNix = pkgs.callPackage ./Cargo.nix { inherit pkgs; };
+in
+(cargoNix.rootCrate.build.override {
+  crateOverrides = pkgs.defaultCrateOverrides // {
+    fzfmenu = attrs: {
+      inherit src;
+      inherit version;
+      meta = {
+        description = "An application launcher based on fzf";
+        homepage = "https://github.com/inogai/fzfmenu";
+        license = lib.licenses.gpl3;
+        maintainers = [ ];
+      };
+    };
   };
-}
+})
