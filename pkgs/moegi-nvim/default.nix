@@ -1,5 +1,8 @@
-{ lib, vimUtils, fetchFromGitHub }:
-
+{
+  lib,
+  vimUtils,
+  fetchFromGitHub,
+}:
 vimUtils.buildVimPlugin {
   pname = "moegi-nvim";
   version = "0.1.0-git.a7c11f";
@@ -25,9 +28,12 @@ vimUtils.buildVimPlugin {
   ];
 
   meta = {
-    description = "A Neovim colorscheme";
+    description = "A port of the moegi theme for neovim";
     homepage = "https://github.com/inogai/moegi.nvim";
+    changelog = "https://github.com/inogai/moegi.nvim/commits/main/";
     license = lib.licenses.mit;
-    maintainers = [ ];
+    maintainers = [];
+    mainProgram = null;
+    platforms = lib.platforms.all;
   };
 }

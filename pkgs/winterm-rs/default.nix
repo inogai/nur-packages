@@ -19,8 +19,11 @@ in
       meta = {
         description = "A snowfall animation in your terminal";
         homepage = "https://github.com/inogai/winterm-rs";
+        changelog = "https://github.com/inogai/winterm-rs/releases";
         license = lib.licenses.mit;
         maintainers = [ ];
+        mainProgram = "winterm-rs";
+        platforms = lib.platforms.all;
       };
     };
   };
