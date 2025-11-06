@@ -407,7 +407,7 @@ rec {
       };
       "fzfmenu" = rec {
         crateName = "fzfmenu";
-        version = "0.2.2";
+        version = "0.3.1";
         edition = "2024";
         crateBin = [
           {
@@ -2431,4 +2431,5 @@ rec {
   #
   };
 }
+
 
