@@ -32,7 +32,7 @@ vimUtils.buildVimPlugin {
     homepage = "https://github.com/inogai/moegi.nvim";
     changelog = "https://github.com/inogai/moegi.nvim/commits/main/";
     license = lib.licenses.mit;
-    maintainers = [];
+    maintainers = [lib.maintainers.inogai];
     mainProgram = null;
     platforms = lib.platforms.all;
   };

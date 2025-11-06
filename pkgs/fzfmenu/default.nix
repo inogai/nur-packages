@@ -24,7 +24,7 @@ in (cargoNix.rootCrate.build.override {
           homepage = "https://github.com/levinion/fzfmenu";
           changelog = "https://github.com/levinion/fzfmenu/releases";
           license = lib.licenses.gpl3Plus;
-          maintainers = [];
+          maintainers = [lib.maintainers.inogai];
           mainProgram = "fzfmenu";
           platforms = lib.platforms.all;
         };
